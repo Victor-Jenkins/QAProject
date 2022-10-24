@@ -5,26 +5,24 @@ on: [push]
 jobs:
   build:
     runs-on: windows-latest
-
-  steps:
-  - uses: actions/checkout@v2
-  - uses: nanasess/setup-chromedriver@v1
-  - name: Install Google Chrome # Using shell script to install Google Chrome
-    run: |
-      chmod +x ./scripts/InstallChrome.sh
-      ./scripts/InstallChrome.sh
-    with:
-      # Optional: do not specify to match Chrome's version
-      chromedriver-version: '106.0.5249.119'
-  - run: chromedriver --url-base=/wd/hub &
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
+    - uses: actions/checkout@v2
+    - uses: nanasess/setup-chromedriver@v1
+    - name: Install Google Chrome # Using shell script to install Google Chrome
+      run: |
+        chmod +x ./scripts/InstallChrome.sh
+        ./scripts/InstallChrome.sh
         with:
+      # Optional: do not specify to match Chrome's version
+         
+             
+    - run: chromedriver --url-base=/wd/hub &
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Build with Maven
-        -run: mvn clean test
-      - run: mvn --batch-mode --update-snapshots package
+    - name: Build with Maven
+    - run: mvn clean test
+      
