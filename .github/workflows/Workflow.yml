@@ -13,9 +13,7 @@ jobs:
       run: |
               chmod +x ./scripts/InstallChrome.sh
               ./scripts/InstallChrome.sh
-      with:
-        # Optional: do not specify to match Chrome's version
-        chromedriver-version: '106.0.5249.119'
+
     - run: chromedriver --url-base=/wd/hub &
 
     
