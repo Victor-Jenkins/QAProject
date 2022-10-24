@@ -24,6 +24,7 @@ jobs:
         cache: maven
     - name: Install Google Chrome # Using shell script to install Google Chrome
     - uses: browser-actions/setup-chrome@latest
+    - name: check version
     - run: chrome --version 
     - name: Build with Maven
-    - run: mvn --batch-mode --update-snapshots package
+    - run: mvn test
