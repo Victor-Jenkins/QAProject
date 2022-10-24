@@ -15,7 +15,7 @@ jobs:
           distribution: 'adopt'
       - uses: browser-actions/setup-chrome@latest
       - run: |
-          VERSION_STRING="106.0.5249.119"
+          VERSION_STRING="88.0.4324.96-1"
           wget "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${VERSION_STRING}_amd64.deb"
           sudo dpkg -i "google-chrome-stable_${VERSION_STRING}_amd64.deb"
 
