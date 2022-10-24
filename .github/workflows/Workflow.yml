@@ -10,9 +10,6 @@ jobs:
     - uses: actions/checkout@v2
     - uses: nanasess/setup-chromedriver@v1
     - name: Install Google Chrome # Using shell script to install Google Chrome
-      run: |
-              chmod +x ./scripts/InstallChrome.sh
-              ./scripts/InstallChrome.sh
 
     - run: chromedriver --url-base=/wd/hub &
 
