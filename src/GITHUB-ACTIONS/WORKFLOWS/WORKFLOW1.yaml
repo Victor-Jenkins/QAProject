@@ -6,6 +6,14 @@ jobs:
   build:
     runs-on: windows-latest
 
+  steps:
+  - uses: actions/checkout@v2
+  - uses: nanasess/setup-chromedriver@v1
+    with:
+      # Optional: do not specify to match Chrome's version
+      chromedriver-version: '88.0.4324.96'
+  - run: chromedriver --url-base=/wd/hub &
+
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
@@ -15,6 +23,3 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         -run: mvn
-
-
-
