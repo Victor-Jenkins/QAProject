@@ -22,9 +22,10 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         cache: maven
-    - name: Install Google Chrome # Using shell script to install Google Chrome
-    - uses: browser-actions/setup-chrome@latest
-    - name: check version
-      run: chrome --version 
+    - run: |
+          VERSION_STRING="88.0.4324.96-1"
+          wget "https://chromedriver.storage.googleapis.com/106.0.5249.61/chromedriver_linux64.zip"
+          sudo dpkg -i "google-chrome-stable_${VERSION_STRING}_amd64.deb"
+          run: chrome --version 
     - name: Build with Maven
       run: mvn test
