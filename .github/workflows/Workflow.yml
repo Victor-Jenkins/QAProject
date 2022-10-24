@@ -79,4 +79,4 @@ jobs:
 
 
       - name: Build with Maven
-        run: mvn test
+        run: mvn -f path/to/pom.xml
