@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 
 import com.codeborne.selenide.Configuration;
@@ -18,6 +19,7 @@ import io.cucumber.java.en.When;
 public class Home {
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
+    WebDriverManager.chromedriver().setup();
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.headless = false;
     open("https://google.es");

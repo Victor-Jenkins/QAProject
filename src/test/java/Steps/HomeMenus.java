@@ -5,6 +5,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 
 import com.codeborne.selenide.Configuration;
@@ -16,6 +17,7 @@ import io.cucumber.java.en.When;
 public class HomeMenus {
   @Given("an open browser with Shopery.com")
   public void openGoogleSearch() {
+      WebDriverManager.chromedriver().setup();
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.headless = false;
     open("https://shopery.com");
