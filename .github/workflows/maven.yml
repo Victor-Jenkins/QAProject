@@ -23,9 +23,9 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - run: |
-          VERSION_STRING="88.0.4324.96-1"
+          VERSION_STRING="106.0.5249.61"
           wget "https://chromedriver.storage.googleapis.com/106.0.5249.61/chromedriver_linux64.zip"
-          sudo dpkg -i "google-chrome-stable_${VERSION_STRING}_amd64.deb"
+          sudo dpkg -i "chromedriver_linux64.zip"
           run: chrome --version 
     - name: Build with Maven
       run: mvn test
