@@ -14,7 +14,10 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
+      - run: |
+          VERSION_STRING="106.0.5249.119"
+          wget "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${VERSION_STRING}_amd64.deb"
+          sudo dpkg -i "google-chrome-stable_${VERSION_STRING}_amd64.deb"
 
 
       - name: Build with Maven
