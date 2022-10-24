@@ -1,27 +1,82 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
-
-name: Java CI with Maven
-
+name: 'build-test'
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+  push:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        os: [ubuntu, macos, windows]
+    runs-on: ${{ matrix.os }}-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 19
-      uses: actions/setup-java@v3
-      with:
-        java-version: '19'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: mvn --batch-mode --update-snapshots package
+      - uses: actions/checkout@v2
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - run: yarn package
+
+      - name: Install with no params
+        uses: ./dist/
+      - if: runner.os == 'Linux'
+        run: chrome --version
+      - if: runner.os == 'macOS'
+        run: chromium --version
+      - if: runner.os == 'Windows'
+        run: (Get-Item (Get-Command chrome).Source).VersionInfo.ProductVersion
+        # Unable to run with command-line option on windows
+
+      - name: Install with version '827102'
+        uses: ./dist/
+        with:
+          chrome-version: 827102
+      - if: runner.os == 'Linux'
+        run: chrome --version
+      - if: runner.os == 'macOS'
+        run: chromium --version
+      - if: runner.os == 'Windows'
+        run: (Get-Item (Get-Command chrome).Source).VersionInfo.ProductVersion
+        # Unable to run with command-line option on windows
+
+      - name: install with version 'dev'
+        uses: ./dist/
+        with:
+          chrome-version: dev
+      - if: runner.os == 'Linux'
+        run: chrome --version
+      - if: runner.os == 'macOS'
+        run: chrome --version
+      - if: runner.os == 'Windows'
+        run: (Get-Item (Get-Command chrome).Source).VersionInfo.ProductVersion
+        # Unable to run with command-line option on window
+      - name: Deploy to latest branch
+        working-directory: ./dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Abort job successfully when no scripts updated
+          test -z "$(git status --short)" && exit 0
+
+          git add .
+          git commit --message "Release for ${GITHUB_SHA}"
+          git push origin latest
+
+  test-latest:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: browser-actions/setup-chrome@latest
+      - run: chrome --version
+
+
+      - name: Build with Maven
+        run: mvn test
