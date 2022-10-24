@@ -20,6 +20,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
+        distribution: 'adopt'
         cache: maven
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
