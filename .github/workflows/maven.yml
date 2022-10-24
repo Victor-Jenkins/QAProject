@@ -9,8 +9,8 @@ jobs:
   steps:
   - uses: actions/checkout@v2
   - uses: nanasess/setup-chromedriver@v1
-     - name: Install Google Chrome # Using shell script to install Google Chrome
-      run: |
+  - name: Install Google Chrome # Using shell script to install Google Chrome
+    run: |
       chmod +x ./scripts/InstallChrome.sh
       ./scripts/InstallChrome.sh
     with:
@@ -27,3 +27,4 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         -run: mvn clean test
+      - run: mvn --batch-mode --update-snapshots package
