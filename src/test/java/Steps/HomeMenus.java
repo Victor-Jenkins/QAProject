@@ -15,12 +15,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class HomeMenus {
-  @Given("an open browser with Shopery.com")
+
+  @Given("an open browser with xbox.com")
   public void openGoogleSearch() {
       WebDriverManager.chromedriver().setup();
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.headless = false;
-    open("https://shopery.com");
+    open("https://xbox.com");
     sleep(500);
     if ($(byText("Accept")).isDisplayed()) {
       $(byText("Accept")).shouldBe(visible).click();
@@ -30,30 +31,45 @@ public class HomeMenus {
 
   @When("Navigate to Menu")
   public void enterKeyword() {
-    String Title2= "//div[@class ='button-text']";
+    String Title2= "//*[@id='uhf-c-nav']/ul/li/div/button/span";
     sleep(1000);
     $x(Title2).shouldBe(visible).click();
   }
 
-  @Then("tres")
+  @Then("Click on accessories")
   public void topTenMatchesShouldBeShown() {
-    String Title= "/html/body/div[1]/div[1]/a/img";
+    String Title= "//*[@id='shellmenu_18']";
     sleep(1000);
     $x(Title).shouldBe(visible).click();
   }
 
-  @Then("cuatro")
+  @Then("Close popup and check Title")
   public void theFirstOneShouldContainKeyword() {
-    String currentStringBoxtitle = "/html/body/div[3]/div[1]/h1";
+    String close = "//*[@id='uhfLogo']/img|//*[@id='emailSup-modal']/div/div/div[1]/button";
+    String currentStringBoxtitle = "//*[@id='feature-uid1c62']/div/div/div/div/h1";
+    $x(close).shouldBe(visible).click();
     sleep(1000);
     assert !currentStringBoxtitle.equals(clipboard().getText());
   }
-  @Then( "CLICK THE FIRST option1")
+  @Then( "Check the first image")
   public void selectResult() {
-    String Image = "//*[@id='w-node-_964c9ab6-f570-fd51-5727-bf12e53c4a2c-e53c4a29']/a/img";
+
+    String Image = "//*[@id='highlight-uid3412']/div[1]/picture/img";
     sleep(1000);
     $x(Image).shouldBe(visible).shouldBe(image);
 
 
+  }
+
+  @Then("looking {string}")
+  public void lookingOption(String write) {
+    String search = "//*[@id='search']";
+
+    String input = "//*[@id='cli_shellHeaderSearchInput']";
+    sleep(1000);
+    $x(search).shouldBe(visible).click();
+    //System.out.println("Series x ");
+    $(By.id("cli_shellHeaderSearchInput")).val(write).pressEnter();
+    sleep(10000);
   }
 }

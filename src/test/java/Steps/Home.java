@@ -46,7 +46,7 @@ public class Home {
   }
   @Then( "CLICK THE FIRST option")
   public void selectResult() {
-    String Title2= "//div[@class ='yuRUbf']";
+    String Title2= "//*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3";
     sleep(1000);
     $x(Title2).shouldBe(visible).click();
     if ($(byText("Accept")).isDisplayed()) {
