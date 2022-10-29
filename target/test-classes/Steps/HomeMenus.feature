@@ -9,6 +9,8 @@ Feature: Check the HomePage
     Then Close popup and check Title
     Then Check the first image
     Then looking "Series X "
+    Then navigate to games and swipe element
+    Then search the game "fallout"
 
 
 
