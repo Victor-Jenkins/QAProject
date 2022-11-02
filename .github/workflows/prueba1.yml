@@ -39,6 +39,9 @@ jobs:
         && sudo mv chromedriver /usr/local/bin/chromedriver \
         && sudo chmod +x /usr/local/bin/chromedriver \
         && chromedriver --version
+        && chrome_options.add_argument('--remote-debugging-port=9222')
+        && chrome_options.binary_location = "/usr/bin/google-chrome"
+        && executable_path="/usr/local/bin/chromedriver"
         
     - name: Build with Maven
       run: mvn clean install
