@@ -23,6 +23,7 @@
         <version>2.22.2</version>
         <configuration>
           <systemPropertyVariables>
+            <skipTests>true</skipTests>
             <selenide.headless>true</selenide.headless>
             <selenide.downloadsFolder>target/downloads</selenide.downloadsFolder>
             <testResources>
