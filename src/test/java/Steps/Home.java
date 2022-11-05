@@ -20,6 +20,7 @@ import io.cucumber.java.en.When;
 public class Home {
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
+                                    WebDriverManager.chromedriver().quit();
     WebDriverManager.chromedriver().setup();
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.headless = false;
