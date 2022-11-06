@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: Steps.GoogleTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 105.441 s <<< FAILURE! - in Steps.GoogleTest
-user can search Blizzard Games(Check the HomePage #1)  Time elapsed: 26.124 s  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 80.254 s <<< FAILURE! - in Steps.GoogleTest
+user can search Blizzard Games(Check the HomePage #1)  Time elapsed: 29.159 s  <<< FAILURE!
 java.lang.AssertionError
 
