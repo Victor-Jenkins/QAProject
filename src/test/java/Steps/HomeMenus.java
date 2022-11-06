@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 
@@ -21,7 +21,10 @@ public class HomeMenus {
 
   @Given("an open browser with xbox.com")
   public void openGoogleSearch() {
-     
+     ChromeOptions options = new ChromeOptions();
+options.addArguments("--no-sandbox");
+options.addArguments("--disable-dev-shm-usage");
+options.addArguments("--headless");
     open("https://xbox.com");
     sleep(500);
     if ($(byText("Accept")).isDisplayed()) {
