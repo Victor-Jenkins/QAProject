@@ -21,9 +21,7 @@ public class HomeMenus {
 
   @Given("an open browser with xbox.com")
   public void openGoogleSearch() {
-      WebDriverManager.chromedriver().setup();
-    Configuration.reportsFolder = "target/surefire-reports";
-    Configuration.headless = false;
+     
     open("https://xbox.com");
     sleep(500);
     if ($(byText("Accept")).isDisplayed()) {
