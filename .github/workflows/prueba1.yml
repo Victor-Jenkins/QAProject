@@ -27,7 +27,10 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         cache: maven
-    
+        run: |
+         export DISPLAY=:99
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+          mycommand
     - name: Install ChromeDriver
       run: |
         CHROME_VERSION=$(google-chrome --version | cut -f 3 -d ' ' | cut -d '.' -f 1) \
