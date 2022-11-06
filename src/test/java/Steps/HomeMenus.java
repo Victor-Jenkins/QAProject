@@ -58,9 +58,9 @@ public class HomeMenus {
     String Image = "//*[@id='highlight-uid3412']/div[1]/picture/img";
     sleep(1000);
     $x(Image).shouldBe(visible).shouldBe(image);
+    sleep(2000);
 
-
-  }
+    }
 
   @Then("looking {string}")
   public void lookingOption(String write) {
