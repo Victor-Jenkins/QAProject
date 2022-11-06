@@ -20,10 +20,13 @@ import io.cucumber.java.en.When;
 public class Home {
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
-    WebDriverManager.chromedriver().setup();
-    //Configuration.reportsFolder = "target/surefire-reports";
-    Configuration.headless = false;
-    open("https://google.es");
+    //WebDriverManager.chromedriver().setup();
+    WebDriver driver;
+    driver = new ChromeDriver();
+    driver.get("https://google.es");
+   // Configuration.reportsFolder = "target/surefire-reports";
+    //Configuration.headless = false;
+    //open("https://google.es");
     sleep(500);
     if ($(byText("Aceptar todo")).isDisplayed()) {
       $(byText("Aceptar todo")).shouldBe(visible).click();
