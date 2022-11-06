@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import com.codeborne.selenide.Condition;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.chrome.ChromeDriver;
 import com.codeborne.selenide.Configuration;
 
 import io.cucumber.java.en.Given;
