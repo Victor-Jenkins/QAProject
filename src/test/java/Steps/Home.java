@@ -1,6 +1,7 @@
 package Steps;
 
 import static Functions.Main.swipeElement;
+import static Functions.Main.waitToLoad;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -9,6 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 import org.openqa.selenium.WebDriver;
 import com.codeborne.selenide.Condition;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import com.codeborne.selenide.Configuration;
@@ -16,14 +18,24 @@ import com.codeborne.selenide.Configuration;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.concurrent.TimeUnit;
 
 public class Home {
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
-    //WebDriverManager.chromedriver().setup();
-  
-   // Configuration.reportsFolder = "target/surefire-reports";
-    //Configuration.headless = false;
+
+
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--headless");
+    ChromeDriver driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
+
     open("https://google.es");
     sleep(500);
     if ($(byText("Aceptar todo")).isDisplayed()) {
@@ -56,26 +68,26 @@ public class Home {
   public void sliderSwipe() {
     String close = "//*[@id='onetrust-reject-all-handler']|//*[@id='onetrust-accept-btn-handler']|//*[@id='onetrust-close-btn-container']/button";
     String Swipe= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[3]/a/blz-promotion";
-    String Swipe1= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[8]/a/blz-promotion";
-    String Swipe2= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[7]/a/blz-promotion";
-    String Swipe3= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[6]/a/blz-promotion";
+    String Swipe1= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[6]/a/blz-promotion|/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[8]/a/blz-promotion";
+    String Swipe2= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[5]/a/blz-promotion|/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[7]/a/blz-promotion";
+    String Swipe3= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[4]/a/blz-promotion|/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[6]/a/blz-promotion";
 
     swipeElement($x(Swipe), -0, 0);
-    sleep(1000);
+    waitToLoad(2);
     swipeElement($x(Swipe1), -0, 0);
-    sleep(1000);
-    swipeElement($x(Swipe2), 0, 0);
-    sleep(1000);
-    swipeElement($x(Swipe3), 0, 0);
+    waitToLoad(2);
+    swipeElement($x(Swipe2), -0, 0);
+    waitToLoad(2);
+    swipeElement($x(Swipe3), -0, 0);
   }
   @Then( "check the titles and images")
   public void checkTitles() {
     String Tit = "/html/body/div[2]/section[1]/blz-section/div[1]/blz-header/h2";
     String Tit2= "//*[@id='products-0']/div[1]/blz-game-card[6]";
     $x(Tit).scrollTo();
-    sleep(1000);
+    waitToLoad(2);
     assert $x(Tit).equals("Juegos destacados");
-    sleep(5000);
-
+    waitToLoad(2);
+    Assert.assertTrue("falta poner el titulo correcto", $x(Tit).exists());
   }
 }

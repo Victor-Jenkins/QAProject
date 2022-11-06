@@ -1,13 +1,14 @@
 package Steps;
 
-import static Functions.Main.swipeElement;
+import static Functions.Main.*;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
-import org.openqa.selenium.chrome.ChromeOptions;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.openqa.selenium.By;
 
 import com.codeborne.selenide.Configuration;
@@ -15,16 +16,27 @@ import com.codeborne.selenide.Configuration;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.concurrent.TimeUnit;
+
 
 public class HomeMenus {
 
   @Given("an open browser with xbox.com")
   public void openGoogleSearch() {
-     ChromeOptions options = new ChromeOptions();
-options.addArguments("--no-sandbox");
-options.addArguments("--disable-dev-shm-usage");
-options.addArguments("--headless");
+    Configuration.reportsFolder = "target/surefire-reports";
+    Configuration.headless = false;
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--headless");
+    ChromeDriver driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
     open("https://xbox.com");
     sleep(500);
     if ($(byText("Accept")).isDisplayed()) {
@@ -59,21 +71,22 @@ options.addArguments("--headless");
   public void selectResult() {
 
     String Image = "//*[@id='highlight-uid3412']/div[1]/picture/img";
-    sleep(1000);
+    waitToLoad(2);
     $x(Image).shouldBe(visible).shouldBe(image);
-    sleep(2000);
 
-    }
+
+  }
 
   @Then("looking {string}")
   public void lookingOption(String write) {
     String search = "//*[@id='search']";
     String OPTION = "//*[@id='coreui-searchresultlist-uis8gf5']/div/div[1]/div[1]/div[1]/h3/a";
-    sleep(1000);
+    waitToLoad(2);
     $x(search).shouldBe(visible).click();
+
     $(By.id("cli_shellHeaderSearchInput")).val(write).pressEnter();
     $x(OPTION).shouldBe(visible).click();
-    sleep(1000);
+    waitToLoad(2);
 
   }
   @Then("navigate to games and swipe element")
@@ -90,12 +103,12 @@ options.addArguments("--headless");
     $x(search).shouldBe(visible).click();
     $x(OPTION).shouldBe(visible).click();
     $x(OPTION2).shouldBe(visible).click();
-    sleep(1000);
+    waitToLoad(2);
     $x(search1).scrollTo();
     swipeElement($x(SWIPE2), -150, 0);
-    sleep(2000);
+    waitToLoad(2);
     swipeElement($x(SWIPE1), -150, 0);
-    sleep(1000);
+    waitToLoad(2);
   }
 
   @Then("search the game {string}")
@@ -104,6 +117,6 @@ options.addArguments("--headless");
     $x(search).shouldBe(visible).click();
     $x(search).sendKeys(fall);
     $x(search).shouldBe(visible).pressEnter();
-    sleep(10000);
+    waitToLoad(2);
   }
 }
