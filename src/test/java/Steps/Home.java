@@ -29,6 +29,9 @@ public class Home {
 
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--headless");
     ChromeDriver driver = new ChromeDriver(options);
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
