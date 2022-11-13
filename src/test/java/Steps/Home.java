@@ -25,9 +25,9 @@ import java.util.concurrent.TimeUnit;
 public class Home {
   @Given("an open browser with google.com")
   public void openGoogleSearch() {
-
-
-    //WebDriverManager.chromedriver().setup();
+    WebDriverManager.chromedriver().setup();
+    Configuration.reportsFolder = "target/surefire-reports";
+    Configuration.headless = false;
     //ChromeOptions options = new ChromeOptions();
     //options.addArguments("--no-sandbox");
     //options.addArguments("--disable-dev-shm-usage");
@@ -86,11 +86,11 @@ public class Home {
   @Then( "check the titles and images")
   public void checkTitles() {
     String Tit = "/html/body/div[2]/section[1]/blz-section/div[1]/blz-header/h2";
-    String Tit2= "//*[@id='products-0']/div[1]/blz-game-card[6]";
+    String Tit2= "//*[@id='products-0']/div[1]/blz-game-card[6]/h3";
     $x(Tit).scrollTo();
     waitToLoad(2);
-    assert $x(Tit).equals("Juegos destacados");
+    Assert.assertTrue("Juegos destacados", $x(Tit).exists());
     waitToLoad(2);
-    Assert.assertTrue("falta poner el titulo correcto", $x(Tit).exists());
+    Assert.assertTrue("World of Warcraft", $x(Tit2).exists());
   }
 }
