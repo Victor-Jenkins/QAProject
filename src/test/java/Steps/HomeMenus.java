@@ -28,15 +28,15 @@ public class HomeMenus {
   @Given("an open browser with xbox.com")
   public void openGoogleSearch() {
     Configuration.reportsFolder = "target/surefire-reports";
-    Configuration.headless = false;
-    WebDriverManager.chromedriver().setup();
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("--no-sandbox");
-    options.addArguments("--disable-dev-shm-usage");
-    options.addArguments("--headless");
-    ChromeDriver driver = new ChromeDriver(options);
-    driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
+    //Configuration.headless = false;
+    //WebDriverManager.chromedriver().setup();
+    //ChromeOptions options = new ChromeOptions();
+    //options.addArguments("--no-sandbox");
+    //options.addArguments("--disable-dev-shm-usage");
+    //options.addArguments("--headless");
+    //ChromeDriver driver = new ChromeDriver(options);
+    //driver.manage().window().maximize();
+    //driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
     open("https://xbox.com");
     sleep(500);
     if ($(byText("Accept")).isDisplayed()) {
@@ -80,7 +80,7 @@ public class HomeMenus {
   @Then("looking {string}")
   public void lookingOption(String write) {
     String search = "//*[@id='search']";
-    String OPTION = "//*[@id='coreui-searchresultlist-uis8gf5']/div/div[1]/div[1]/div[1]/h3/a";
+    String OPTION = "//*[@id='rootContainer_Search']/div/div[4]/div/ul/li[1]/div/div/h4/a";
     waitToLoad(2);
     $x(search).shouldBe(visible).click();
 
@@ -111,9 +111,18 @@ public class HomeMenus {
     waitToLoad(2);
   }
 
+  @Then("search the name {string}")
+  public void Name(String name) {
+    String search = "//*[@id='gamepass-root']/div/div/header/div/div[1]/div/div[2]/form/div/div/input";
+    $x(search).shouldBe(visible).click();
+    $x(search).sendKeys(name);
+    $x(search).shouldBe(visible).pressEnter();
+    waitToLoad(2);
+  }
   @Then("search the game {string}")
   public void Game(String fall) {
     String search = "//*[@id='gamepass-root']/div/div/header/div/div[1]/div/div[2]/form/div/div/input";
+    back();
     $x(search).shouldBe(visible).click();
     $x(search).sendKeys(fall);
     $x(search).shouldBe(visible).pressEnter();

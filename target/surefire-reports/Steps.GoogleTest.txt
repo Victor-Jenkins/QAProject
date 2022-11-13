@@ -1,7 +1,35 @@
 -------------------------------------------------------------------------------
 Test set: Steps.GoogleTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 80.254 s <<< FAILURE! - in Steps.GoogleTest
-user can search Blizzard Games(Check the HomePage #1)  Time elapsed: 29.159 s  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 81.974 s <<< FAILURE! - in Steps.GoogleTest
+user can search Blizzard Games(Check the HomePage #1)  Time elapsed: 35.328 s  <<< FAILURE!
 java.lang.AssertionError
+
+user can search Accessories on XBOX Page(Check the HomePage #2)  Time elapsed: 45.887 s  <<< ERROR!
+org.openqa.selenium.json.JsonException: 
+java.lang.reflect.InvocationTargetException
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-DO0KF1E', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [656554a5a14bca2760dcb7e65f754419, actions {actions=[org.openqa.selenium.interactions.Sequence@1c52552f]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\VICTOR\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50390}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50390/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 656554a5a14bca2760dcb7e65f754419
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //*[@id='BodyContent']/div[1]/div/div[2]/ol/li[3]/a/div[2]/div}
+Expected: exist
+Screenshot: file:/C:/Users/VICTOR/Documents/GitHub/QAProject/target/surefire-reports/1668309656613.0.png
+Page source: file:/C:/Users/VICTOR/Documents/GitHub/QAProject/target/surefire-reports/1668309656613.0.html
+Timeout: 4 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='BodyContent']/div[1]/div/div[2]/ol/li[3]/a/div[2]/div"}
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='BodyContent']/div[1]/div/div[2]/ol/li[3]/a/div[2]/div"}
+  (Session info: headless chrome=107.0.5304.107)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-DO0KF1E', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [656554a5a14bca2760dcb7e65f754419, findElement {using=xpath, value=//*[@id='BodyContent']/div[1]/div/div[2]/ol/li[3]/a/div[2]/div}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\VICTOR\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50390}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50390/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 656554a5a14bca2760dcb7e65f754419
 

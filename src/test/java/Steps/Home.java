@@ -27,14 +27,14 @@ public class Home {
   public void openGoogleSearch() {
 
 
-    WebDriverManager.chromedriver().setup();
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("--no-sandbox");
-    options.addArguments("--disable-dev-shm-usage");
-    options.addArguments("--headless");
-    ChromeDriver driver = new ChromeDriver(options);
-    driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
+    //WebDriverManager.chromedriver().setup();
+    //ChromeOptions options = new ChromeOptions();
+    //options.addArguments("--no-sandbox");
+    //options.addArguments("--disable-dev-shm-usage");
+    //options.addArguments("--headless");
+    //ChromeDriver driver = new ChromeDriver(options);
+    //driver.manage().window().maximize();
+    //driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
 
     open("https://google.es");
     sleep(500);
@@ -71,7 +71,10 @@ public class Home {
     String Swipe1= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[6]/a/blz-promotion|/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[8]/a/blz-promotion";
     String Swipe2= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[5]/a/blz-promotion|/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[7]/a/blz-promotion";
     String Swipe3= "/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[4]/a/blz-promotion|/html/body/div[2]/section[1]/div[2]/div/div[2]/ul/li[6]/a/blz-promotion";
-
+      if ($(byText("Aceptar todas las cookies")).isDisplayed()) {
+          $(byText("Aceptar todas las cookies")).shouldBe(visible).click();
+          $(byText("Aceptar todas las cookies")).should(disappear);
+      }
     swipeElement($x(Swipe), -0, 0);
     waitToLoad(2);
     swipeElement($x(Swipe1), -0, 0);
