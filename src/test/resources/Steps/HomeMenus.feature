@@ -10,7 +10,7 @@ Feature: Check the HomePage
     Then Check the first image
     Then looking "Series X "
     Then navigate to games and swipe element
-    Then search the name "Victor Bañó"
+    Then search the name "Doom"
     Then search the game "Fallout"
 
 

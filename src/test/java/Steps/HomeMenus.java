@@ -28,8 +28,9 @@ public class HomeMenus {
   @Given("an open browser with xbox.com")
   public void openGoogleSearch() {
     Configuration.reportsFolder = "target/surefire-reports";
-    //Configuration.headless = false;
-    //WebDriverManager.chromedriver().setup();
+    WebDriverManager.chromedriver().setup();
+    Configuration.reportsFolder = "target/surefire-reports";
+    Configuration.headless = false;
     //ChromeOptions options = new ChromeOptions();
     //options.addArguments("--no-sandbox");
     //options.addArguments("--disable-dev-shm-usage");
@@ -127,5 +128,6 @@ public class HomeMenus {
     $x(search).sendKeys(fall);
     $x(search).shouldBe(visible).pressEnter();
     waitToLoad(2);
+    WebDriverManager.chromedriver().quit();
   }
 }
