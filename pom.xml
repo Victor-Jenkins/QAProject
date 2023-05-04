@@ -69,17 +69,20 @@
       <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide</artifactId>
-      <version>6.0.3</version>
-      <scope>test</scope>
+      <version>6.13.1</version>
     </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>1.7.32</version>
-      <scope>test</scope>
+      <version>2.0.0-alpha0</version>
+      <scope>runtime</scope>
     </dependency>
 
   </dependencies>

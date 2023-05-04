@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="QAProject" />
         <module name="Shopery" />
+        <module name="TELEFONICA" />
       </profile>
     </annotationProcessing>
   </component>
