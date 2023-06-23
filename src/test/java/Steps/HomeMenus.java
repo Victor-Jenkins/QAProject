@@ -6,7 +6,8 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
-
+import io.cucumber.junit.Cucumber;
+import org.junit.runner.RunWith;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.openqa.selenium.By;
@@ -22,7 +23,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
-
+@RunWith(Cucumber.class)
 public class HomeMenus {
 
   @Given("an open browser with xbox.com")
