@@ -1,5 +1,6 @@
 Steps\LoginTest.class
+Steps\HomeMenus.class
 Steps\TextReport.class
-Steps\Home.class
 Functions\Main.class
-Steps\telefonica.class
+Steps\Movistar.class
+Steps\Telefónica.class
