@@ -26,7 +26,7 @@ public class Movistar {
   public void openURLSearch() {
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.reportsFolder = "target/surefire-reports";
-    Configuration.headless = false;
+   
 
     open("https://www.movistar.es/particulares/movistarplus/");
     sleep(500);
