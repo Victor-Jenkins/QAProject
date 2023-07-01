@@ -25,7 +25,6 @@ public class Movistar {
   @Given("an open browser with Movistar.com")
   public void openURLSearch() {
     Configuration.reportsFolder = "target/surefire-reports";
-    WebDriverManager.chromedriver().setup();
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.headless = false;
 
