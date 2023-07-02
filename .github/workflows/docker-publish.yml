@@ -28,14 +28,8 @@ jobs:
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           sudo apt-get -f install
 
-
-      - name: Ejecutar pruebas con Docker
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}/tests:/tests \
-            -v ${{ github.workspace }}/allure-results:/allure-results \
-            nombre_de_la_imagen:latest \
-            mvn test --alluredir=/allure-results
+      - name: Docker compose tests run
+        uses: cloudposse/github-action-docker-compose-test-run@0.1.2
 
       - name: Configurar Allure
         run: |
