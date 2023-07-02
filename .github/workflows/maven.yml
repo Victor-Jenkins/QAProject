@@ -39,3 +39,20 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
+        
+      - name: Configurar Allure
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/allure-results:/allure-results \
+            -v ${{ github.workspace }}/allure-report:/allure-report \
+            qameta/allure-commandline \
+            allure generate /allure-results --clean -o /allure-report
+
+      - name: Mostrar reporte de Allure en logs
+        run: |
+          cat ${{ github.workspace }}/allure-report/index.html
+
+      - name: Subir informe de Allure
+        uses: actions/upload-artifact@v2
+        with:
+          name: Allure Report
