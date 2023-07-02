@@ -11,5 +11,5 @@ Feature: Check the Movistar.com
     Then Check the navigation and add Zipcode "08223"
     Then Check previous Steps for contracting
     Then Check previous Steps for contracting1
-    Then Finish Shopping "45488323G""Víctor""Bañó""Rodríguez""banorodriguez2@gmail.com""666437656"
+    Then Finish Shopping "Sudo"
 

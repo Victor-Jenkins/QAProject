@@ -28,9 +28,9 @@ public class Telefónica {
 
   @When("Check titles and accept cookies")
   public void enterName() {
-    String Title3= "//*[@id=\"primary\"]/div[8]/div/div[2]/div/div/div[1]/div/div[3]/a/span[1]";
-    String Title4= "//*[@id=\"primary\"]/div[8]/div/div[2]/div/div/div[2]/div/div[1]/div[3]/a/span[1]";
-    String Title2= "//*[@id=\"primary\"]/div[6]/div/div/a";
+    String Title3= "//*[@id=\"primary\"]/div[4]/div/div/a";
+    String Title4= "//*[@id=\"primary\"]/div[6]/div/div[1]/div/h2";
+    String Title2= "//*[@id=\"primary\"]/div[2]/div/div/div[2]/h2/a/span";
     String Title= "//*[@id=\"primary\"]/div[4]/div/div/a";
     String cookies= "//*[@id='onetrust-pc-btn-handler']";
     String cookiesNo= "//*[@id='onetrust-pc-sdk']/div[3]/div[1]/div/button[1]";
@@ -50,7 +50,7 @@ public class Telefónica {
   @Then ("Check main navigation and select Services")
   public void enterPassword() {
     String main= "//*[@id='tf-main-toggle']";
-    String Services="//*[@id='menu-item-418']/button/span";
+
     String cookies= "//*[@id='barritaloca']/div/div/button[2]";
     String cookiesNo= "//*[@id='capa-total']/div/div/div[3]/div/button[1]";
 
@@ -60,23 +60,23 @@ public class Telefónica {
     }
 
     $x(main).click();
-    $x(Services).click();
+
     sleep(1000);
   }
 
   @Then("Check main navigation and select Particulars")
   public void ChangeFilter() {
-    String Part = "//*[@id='menu-item-16036']/a";
-    $x(Part).click();
+    String Part = "//*[@id=\"primary\"]/div[6]/div/div[1]/div/h2";
+    $x(Part).scrollTo();
 
   }
   @Then( "Check the Navigation and scrolling page")
   public void selectResult() {
 
-    String España = "//*[@id=\"post-16031\"]/div/div[2]/div[1]/h2";
-    String Brasil = "//*[@id=\"post-16031\"]/div/div[4]/div/div/div[1]/h2";
-    String Alemania = "//*[@id=\"post-16031\"]/div/div[6]/div[1]/h2";
-    String UK = "//*[@id=\"post-16031\"]/div/div[8]/div[1]/h2";
+    String España = "//*[@id=\"primary\"]/div[6]/div/div[4]/div[1]/div/div/h3";
+    String Brasil = "//*[@id=\"primary\"]/div[6]/div/div[4]/div[1]/div/div/h3";
+    String Alemania = "//*[@id=\"primary\"]/div[6]/div/div[11]/figure/blockquote";
+    String UK = "//*[@id=\"primary\"]/div[7]/div/div[1]/div[1]/div/img";
     waitToLoad(1);
     $x(España).scrollTo();
     waitToLoad(1);
@@ -90,8 +90,8 @@ public class Telefónica {
 
   @Then("Check the contact button")
   public void lookingOptions() {
-    String contact = "//*[@id=\"colophon\"]/div[1]/div[2]/div[3]/ul/li[2]/a";
-    $x(contact).scrollTo().click();
+    String contact = "//*[@id=\"primary\"]/article/div/div[1]/div[1]/h1";
+    $x(contact).scrollTo();
     waitToLoad(2);
 
   }
