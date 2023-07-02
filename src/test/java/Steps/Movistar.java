@@ -39,7 +39,7 @@ public class Movistar {
    String cookiesNo= "//*[@id='onetrust-pc-sdk']/div/div[3]/div[1]/button";
     String name= "//*[@id='inputsupportadnsearch']";
     String Title= "//*[@id=\"__next\"]/header/div[2]/div[1]/div[1]/a[7]/div/span";
-    waitToLoad(2);
+
 
     if ($(By.xpath(cookies)).isDisplayed()) {
       $(By.xpath(cookies)).shouldBe(visible).click();
@@ -47,7 +47,7 @@ public class Movistar {
     }
     Assert.assertTrue("Más servicios", $x(Title).exists());
     $x(name).sendKeys(name1);
-    waitToLoad(2);
+  
   }
 
   @Then ("Complete input with {string}")
