@@ -15,6 +15,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
  *
@@ -24,9 +25,12 @@ public class Movistar {
 
   @Given("an open browser with Movistar.com")
   public void openURLSearch() {
+
     Configuration.reportsFolder = "target/surefire-reports";
-    Configuration.reportsFolder = "target/surefire-reports";
-    //Configuration.headless = false;
+    Configuration.headless = false;
+
+
+
 
     open("https://www.movistar.es/particulares/movistarplus/");
     sleep(500);
