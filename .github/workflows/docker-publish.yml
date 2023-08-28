@@ -1,49 +1,38 @@
-name: Pruebas con Docker y Allure
+name: Java CI with Maven
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
-  test:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código fuente
-        uses: actions/checkout@v2
-
-      - name: Instalar Docker
-        run: |
-          sudo apt-get update
-          sudo apt-get -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-          sudo apt-get update
-          sudo apt-get -y install docker-ce docker-ce-cli containerd.io
-
-      - name: Instalar Chrome
-        run: |
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb
-          sudo apt-get -f install
-
-      - name: Docker compose tests run
-        uses: cloudposse/github-action-docker-compose-test-run@0.1.2
-
-      - name: Configurar Allure
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}/allure-results:/allure-results \
-            -v ${{ github.workspace }}/allure-report:/allure-report \
-            qameta/allure-commandline \
-            allure generate /allure-results --clean -o /allure-report
-
-      - name: Mostrar reporte de Allure en logs
-        run: |
-          cat ${{ github.workspace }}/allure-report/index.html
-
-      - name: Subir informe de Allure
-        uses: actions/upload-artifact@v2
+      - uses: actions/checkout@v2
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
         with:
-          name: Allure Report
-          path: allure-report
+          java-version: '17'
+          distribution: 'adopt'
+          cache: maven
+
+      - name: Install ChromeDriver
+        run: |
+          CHROME_VERSION=$(google-chrome --version | awk -F " " '{print $3}' | awk -F "." '{print $1}') \
+          && CHROMEDRIVER_RELEASE=$(curl --location --fail --retry 3 http://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}) \
+          && curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip "http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_RELEASE/chromedriver_linux64.zip" \
+          && cd /tmp \
+          && unzip chromedriver_linux64.zip \
+          && chmod +x chromedriver \
+          && sudo mv chromedriver /usr/local/bin/
+
+      - name: Set up Docker Compose
+        uses: KengoTODA/actions-setup-docker-compose@main
+
+      - name: Build with Maven
+        run: mvn clean install
