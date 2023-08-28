@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 @RunWith(Cucumber.class)
 public class HomeMenus {
 
-  @Given("an open browser with xbox.com")
+  @Given("open browser with xbox.com")
   public void openGoogleSearch() {
     Configuration.reportsFolder = "target/surefire-reports";
     WebDriverManager.chromedriver().setup();
@@ -47,21 +47,21 @@ public class HomeMenus {
     }
   }
 
-  @When("Navigate to Menu")
+  @When("Navigate to Menu1")
   public void enterKeyword() {
     String Title2= "//*[@id='uhf-c-nav']/ul/li/div/button/span";
     sleep(1000);
     $x(Title2).shouldBe(visible).click();
   }
 
-  @Then("Click on accessories")
+  @Then("Click on accessories1")
   public void topTenMatchesShouldBeShown() {
     String Title= "//*[@id='shellmenu_18']";
     sleep(1000);
     $x(Title).shouldBe(visible).click();
   }
 
-  @Then("Close popup and check Title")
+  @Then("Close popup and check Title1")
   public void theFirstOneShouldContainKeyword() {
     String close = "//*[@id='uhfLogo']/img|//*[@id='emailSup-modal']/div/div/div[1]/button";
     String currentStringBoxtitle = "//*[@id='feature-uid1c62']/div/div/div/div/h1";
@@ -69,7 +69,7 @@ public class HomeMenus {
     sleep(1000);
     assert !currentStringBoxtitle.equals(clipboard().getText());
   }
-  @Then( "Check the first image")
+  @Then( "Check the first image1")
   public void selectResult() {
 
     String Image = "//*[@id='highlight-uid3412']/div[1]/picture/img";

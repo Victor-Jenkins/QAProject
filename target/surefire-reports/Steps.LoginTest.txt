@@ -1,13 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: Steps.LoginTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 106.481 s <<< FAILURE! - in Steps.LoginTest
-user can search XBOX(Check the HomePage #1)  Time elapsed: 62.846 s  <<< FAILURE!
+Tests run: 6, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 103.226 s <<< FAILURE! - in Steps.LoginTest
+user can search XBOX(Check the HomePage #1)  Time elapsed: 26.514 s  <<< FAILURE!
 com.codeborne.selenide.ex.ElementNotFound: 
 Element not found {By.xpath: //*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3}
 Expected: visible
-Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693255789739.0.png
-Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693255789739.0.html
+Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693257236177.0.png
+Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693257236177.0.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3"}
 Caused by: org.openqa.selenium.NoSuchElementException: 
@@ -17,38 +17,34 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.3-060203-generic', java.version: '11.0.20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bdbbd5c24e29d529f9edf5ef9deea5bf, findElement {using=xpath, value=//*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /tmp/.com.google.Chrome.LVd54R}, goog:chromeOptions: {debuggerAddress: localhost:39279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:39279/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bdbbd5c24e29d529f9edf5ef9deea5bf
+Command: [c760be5d37d340823e159add581bdb0c, findElement {using=xpath, value=//*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /tmp/.com.google.Chrome.ChjgnB}, goog:chromeOptions: {debuggerAddress: localhost:45757}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:45757/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c760be5d37d340823e159add581bdb0c
 
-user can search XBOX(Check the HomePage #2)  Time elapsed: 6.708 s  <<< ERROR!
-io.cucumber.junit.UndefinedStepException: 
-The step 'tres' and 2 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
+user can search XBOX(Check the HomePage #2)  Time elapsed: 14.888 s  <<< FAILURE!
+com.codeborne.selenide.ex.InvalidStateException: 
+Invalid element state [By.xpath: //*[@id='uhfLogo']/img|//*[@id='emailSup-modal']/div/div/div[1]/button]: element click intercepted: Element <button data-bi-bhvr="1234" data-bi-ct="Button" data-bi-pa="Body" class="close" aria-label="Cerrar ventana de diálogo" data-dismiss="modal" type="button">...</button> is not clickable at point (962, 90). Other element would receive the click: <div id="wcpConsentBannerCtrl" class="_23tra1HsiiP6cT-Cka-ycB" dir="ltr" role="alert" style="overflow-x: visible;">...</div>
+Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693257251237.1.png
+Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693257251237.1.html
+Timeout: 4 s.
+Caused by: ElementClickInterceptedException: element click intercepted: Element <button data-bi-bhvr="1234" data-bi-ct="Button" data-bi-pa="Body" class="close" aria-label="Cerrar ventana de diálogo" data-dismiss="modal" type="button">...</button> is not clickable at point (962, 90). Other element would receive the click: <div id="wcpConsentBannerCtrl" class="_23tra1HsiiP6cT-Cka-ycB" dir="ltr" role="alert" style="overflow-x: visible;">...</div>
+Caused by: org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <button data-bi-bhvr="1234" data-bi-ct="Button" data-bi-pa="Body" class="close" aria-label="Cerrar ventana de diálogo" data-dismiss="modal" type="button">...</button> is not clickable at point (962, 90). Other element would receive the click: <div id="wcpConsentBannerCtrl" class="_23tra1HsiiP6cT-Cka-ycB" dir="ltr" role="alert" style="overflow-x: visible;">...</div>
+  (Session info: chrome=115.0.5790.170)
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.3-060203-generic', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c760be5d37d340823e159add581bdb0c, clickElement {id=3F1CA6A619A24D69CFA50EF86DA6B7C0_element_53}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /tmp/.com.google.Chrome.ChjgnB}, goog:chromeOptions: {debuggerAddress: localhost:45757}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:45757/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (c760be5d37d340823e159add581bdb0c)] -> xpath: //*[@id='uhfLogo']/img|//*[@id='emailSup-modal']/div/div/div[1]/button]
+Session ID: c760be5d37d340823e159add581bdb0c
 
-@Then("tres")
-public void tres() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("cuatro")
-public void cuatro() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("CLICK THE FIRST option1")
-public void click_the_first_option1() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-
-user can navigate and search results on Movistar.com(Check the Movistar.com)  Time elapsed: 16.23 s  <<< FAILURE!
+user can navigate and search results on Movistar.com(Check the Movistar.com)  Time elapsed: 15.024 s  <<< FAILURE!
 com.codeborne.selenide.ex.ElementNotFound: 
 Element not found {By.xpath: //*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a}
 Expected: visible
-Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693255812971.1.png
-Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693255812971.1.html
+Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693257276766.2.png
+Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693257276766.2.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a"}
 Caused by: org.openqa.selenium.NoSuchElementException: 
@@ -58,7 +54,7 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.3-060203-generic', java.version: '11.0.20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bdbbd5c24e29d529f9edf5ef9deea5bf, findElement {using=xpath, value=//*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /tmp/.com.google.Chrome.LVd54R}, goog:chromeOptions: {debuggerAddress: localhost:39279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:39279/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bdbbd5c24e29d529f9edf5ef9deea5bf
+Command: [c760be5d37d340823e159add581bdb0c, findElement {using=xpath, value=//*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /tmp/.com.google.Chrome.ChjgnB}, goog:chromeOptions: {debuggerAddress: localhost:45757}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:45757/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c760be5d37d340823e159add581bdb0c
 

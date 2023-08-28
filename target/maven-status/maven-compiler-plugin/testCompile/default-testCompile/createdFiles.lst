@@ -1,8 +1,10 @@
-Steps/LoginTest.class
-Steps/Home.class
 Steps/HomeMenus.class
-Steps/Movistar.class
 Steps/TextReport.class
 Steps/Telefónica.class
+Steps/LoginTest.class
+Steps/Home.class
+Steps/Movistar.class
 Steps/GoogleTest.class
+Steps/Shopery.class
 Functions/Main.class
+Steps/HomeShopery.class
