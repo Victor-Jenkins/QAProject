@@ -22,7 +22,9 @@ jobs:
           cache: maven
 
       - name: Set up Docker
-        uses: docker/setup-docker@v2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
 
       - name: Build ChromeDriver Docker image
         run: |
@@ -31,6 +33,5 @@ jobs:
       - name: Run tests in Docker container
         run: |
           docker run -v $(pwd):/workspace chromedriver mvn clean install
-
 
 
