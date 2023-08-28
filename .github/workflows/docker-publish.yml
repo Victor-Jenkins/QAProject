@@ -29,8 +29,6 @@ jobs:
           chmod +x chromedriver
           sudo mv chromedriver /usr/local/bin/
 
-      - name: Set up Docker Compose
-        uses: KengoTODA/actions-setup-docker-compose@main
-
       - name: Build with Maven
         run: mvn clean install
+
