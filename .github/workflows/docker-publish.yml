@@ -11,6 +11,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    container:
+      image: docker:latest  # Usar la imagen de Docker oficial
+
     steps:
       - uses: actions/checkout@v2
 
@@ -21,11 +24,6 @@ jobs:
           distribution: 'adopt'
           cache: maven
 
-      - name: Set up Docker
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io
-
       - name: Build ChromeDriver Docker image
         run: |
           docker build -t chromedriver .
@@ -33,5 +31,3 @@ jobs:
       - name: Run tests in Docker container
         run: |
           docker run -v $(pwd):/workspace chromedriver mvn clean install
-
-
