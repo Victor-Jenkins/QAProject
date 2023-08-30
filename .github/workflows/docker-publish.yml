@@ -10,15 +10,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up JDK 8
+      - name: Set up JDK
         uses: actions/setup-java@v2
         with:
-          java-version: 8
+          java-version: 16 # Puedes ajustar la versión de Java que desees
 
-      - name: Set up Chrome
-        uses: actions/setup-chrome@v3
-        with:
-          version: 'latest' # O la versión específica que necesites
+      - name: Install Google Chrome
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
       - name: Build and run tests
         run: mvn clean test
@@ -31,5 +33,3 @@ jobs:
         with:
           name: allure-report
           path: target/allure-report
-
-  
