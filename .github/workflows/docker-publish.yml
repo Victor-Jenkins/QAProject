@@ -10,6 +10,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: 16 # Puedes ajustar la versión de Java que desees
+
+      - name: Install Chromium
+        uses: chromium-actions/setup-chromium@v1
+        with:
+          cache: chromium-cache
+          version: latest # Puedes especificar la versión que necesitas, como "90.x" por ejemplo
+
       - name: Build and run tests
         run: mvn clean test
 
@@ -22,7 +33,6 @@ jobs:
           name: allure-report
           path: target/allure-report
 
-      - name: Upload Allure report artifact
         uses: actions/upload-artifact@v2
         with:
           name: allure-report
