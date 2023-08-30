@@ -17,6 +17,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
+      - name: Download and Install ChromeDriver
+        run: |
+          CHROME_DRIVER_VERSION=116.0.5845.140
+          CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
+          CHROME_DRIVER_DIR=/usr/local/bin
+
+          # Download and unzip ChromeDriver directly
+          curl -sS $CHROME_DRIVER_URL | zcat | sudo tee $CHROME_DRIVER_DIR/chromedriver > /dev/null
+          sudo chmod +x $CHROME_DRIVER_DIR/chromedriver
+
       - name: Build and run tests
         run: mvn clean test
 
