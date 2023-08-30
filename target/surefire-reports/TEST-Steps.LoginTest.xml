@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Steps.LoginTest" time="101.94" tests="6" errors="0" skipped="0" failures="3">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Steps.LoginTest" time="116.527" tests="6" errors="0" skipped="0" failures="3">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/victor/Documentos/GitHub/QAProject/target/surefire/surefirebooter3819927030100091787.jar /home/victor/Documentos/GitHub/QAProject/target/surefire 2023-08-30T14-33-29_770-jvmRun1 surefire13715050332050132633tmp surefire_05617219805000263680tmp"/>
+    <property name="sun.java.command" value="/home/victor/Documentos/GitHub/QAProject/target/surefire/surefirebooter8948759109011440767.jar /home/victor/Documentos/GitHub/QAProject/target/surefire 2023-08-30T14-58-23_010-jvmRun1 surefire3879845218881446521tmp surefire_05303281340822616002tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/victor/Documentos/GitHub/QAProject/target/test-classes:/home/victor/Documentos/GitHub/QAProject/target/classes:/home/victor/.m2/repository/io/cucumber/cucumber-java/7.0.0/cucumber-java-7.0.0.jar:/home/victor/.m2/repository/io/cucumber/cucumber-core/7.0.0/cucumber-core-7.0.0.jar:/home/victor/.m2/repository/io/cucumber/cucumber-gherkin/7.0.0/cucumber-gherkin-7.0.0.jar:/home/victor/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.0.0/cucumber-gherkin-messages-7.0.0.jar:/home/victor/.m2/repository/io/cucumber/messages/17.1.1/messages-17.1.1.jar:/home/victor/.m2/repository/io/cucumber/tag-expressions/4.0.2/tag-expressions-4.0.2.jar:/home/victor/.m2/repository/io/cucumber/cucumber-expressions/13.0.1/cucumber-expressions-13.0.1.jar:/home/victor/.m2/repository/io/cucumber/datatable/7.0.0/datatable-7.0.0.jar:/home/victor/.m2/repository/io/cucumber/cucumber-plugin/7.0.0/cucumber-plugin-7.0.0.jar:/home/victor/.m2/repository/io/cucumber/docstring/7.0.0/docstring-7.0.0.jar:/home/victor/.m2/repository/io/cucumber/html-formatter/17.0.0/html-formatter-17.0.0.jar:/home/victor/.m2/repository/io/cucumber/create-meta/6.0.1/create-meta-6.0.1.jar:/home/victor/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/victor/.m2/repository/io/cucumber/cucumber-junit/7.0.0/cucumber-junit-7.0.0.jar:/home/victor/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/victor/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/victor/.m2/repository/com/codeborne/selenide/6.13.1/selenide-6.13.1.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-java/4.9.0/selenium-java-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-api/4.9.0/selenium-api-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.9.0/selenium-chrome-driver-4.9.0.jar:/home/victor/.m2/repository/com/google/auto/service/auto-service-annotations/1.0.1/auto-service-annotations-1.0.1.jar:/home/victor/.m2/repository/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar:/home/victor/.m2/repository/com/google/auto/auto-common/1.2/auto-common-1.2.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.9.0/selenium-chromium-driver-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-json/4.9.0/selenium-json-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.9.0/selenium-manager-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v110/4.9.0/selenium-devtools-v110-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v111/4.9.0/selenium-devtools-v111-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v112/4.9.0/selenium-devtools-v112-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.9.0/selenium-devtools-v85-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.9.0/selenium-edge-driver-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.9.0/selenium-firefox-driver-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-http/4.9.0/selenium-http-4.9.0.jar:/home/victor/.m2/repository/dev/failsafe/failsafe/3.3.1/failsafe-3.3.1.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.9.0/selenium-ie-driver-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.9.0/selenium-remote-driver-4.9.0.jar:/home/victor/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/victor/.m2/repository/io/netty/netty-buffer/4.1.91.Final/netty-buffer-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-codec-http/4.1.91.Final/netty-codec-http-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-codec/4.1.91.Final/netty-codec-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-handler/4.1.91.Final/netty-handler-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-common/4.1.91.Final/netty-common-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.91.Final/netty-transport-classes-epoll-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-transport-classes-kqueue/4.1.91.Final/netty-transport-classes-kqueue-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-transport-native-epoll/4.1.91.Final/netty-transport-native-epoll-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.91.Final/netty-transport-native-kqueue-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.91.Final/netty-transport-native-unix-common-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-transport/4.1.91.Final/netty-transport-4.1.91.Final.jar:/home/victor/.m2/repository/io/netty/netty-resolver/4.1.91.Final/netty-resolver-4.1.91.Final.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-api/1.25.0/opentelemetry-api-1.25.0.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-context/1.25.0/opentelemetry-context-1.25.0.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.25.0/opentelemetry-exporter-logging-1.25.0.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.25.0/opentelemetry-sdk-metrics-1.25.0.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.25.0-alpha/opentelemetry-sdk-logs-1.25.0-alpha.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-api-logs/1.25.0-alpha/opentelemetry-api-logs-1.25.0-alpha.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-api-events/1.25.0-alpha/opentelemetry-api-events-1.25.0-alpha.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.25.0/opentelemetry-sdk-common-1.25.0.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.25.0/opentelemetry-sdk-extension-autoconfigure-spi-1.25.0.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.25.0-alpha/opentelemetry-sdk-extension-autoconfigure-1.25.0-alpha.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.25.0/opentelemetry-sdk-trace-1.25.0.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.25.0/opentelemetry-sdk-1.25.0.jar:/home/victor/.m2/repository/io/opentelemetry/opentelemetry-semconv/1.25.0-alpha/opentelemetry-semconv-1.25.0-alpha.jar:/home/victor/.m2/repository/io/ous/jtoml/2.0.0/jtoml-2.0.0.jar:/home/victor/.m2/repository/net/bytebuddy/byte-buddy/1.14.4/byte-buddy-1.14.4.jar:/home/victor/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/victor/.m2/repository/org/asynchttpclient/async-http-client/2.12.3/async-http-client-2.12.3.jar:/home/victor/.m2/repository/org/asynchttpclient/async-http-client-netty-utils/2.12.3/async-http-client-netty-utils-2.12.3.jar:/home/victor/.m2/repository/io/netty/netty-codec-socks/4.1.60.Final/netty-codec-socks-4.1.60.Final.jar:/home/victor/.m2/repository/io/netty/netty-handler-proxy/4.1.60.Final/netty-handler-proxy-4.1.60.Final.jar:/home/victor/.m2/repository/io/netty/netty-transport-native-epoll/4.1.60.Final/netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar:/home/victor/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.60.Final/netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar:/home/victor/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar:/home/victor/.m2/repository/com/typesafe/netty/netty-reactive-streams/2.0.4/netty-reactive-streams-2.0.4.jar:/home/victor/.m2/repository/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.9.0/selenium-safari-driver-4.9.0.jar:/home/victor/.m2/repository/org/seleniumhq/selenium/selenium-support/4.9.0/selenium-support-4.9.0.jar:/home/victor/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar:/home/victor/.m2/repository/com/codeborne/selenide-core/6.13.1/selenide-core-6.13.1.jar:/home/victor/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/victor/.m2/repository/io/github/bonigarcia/webdrivermanager/5.3.2/webdrivermanager-5.3.2.jar:/home/victor/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/victor/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/victor/.m2/repository/org/apache/commons/commons-compress/1.23.0/commons-compress-1.23.0.jar:/home/victor/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/victor/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/victor/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/victor/.m2/repository/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar:/home/victor/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/victor/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/victor/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/victor/.m2/repository/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar:/home/victor/.m2/repository/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar:/home/victor/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/victor/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/victor/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/home/victor/.m2/repository/org/slf4j/slf4j-simple/2.0.0-alpha0/slf4j-simple-2.0.0-alpha0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/victor/Documentos/GitHub/QAProject/target/surefire/surefirebooter3819927030100091787.jar"/>
+    <property name="surefire.real.class.path" value="/home/victor/Documentos/GitHub/QAProject/target/surefire/surefirebooter8948759109011440767.jar"/>
     <property name="selenide.downloadsFolder" value="target/downloads"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.20+8-post-Ubuntu-1ubuntu120.04"/>
@@ -62,12 +62,12 @@
     <property name="selenide.headless" value="true"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="user can search XBOX" classname="Check the HomePage #1" time="16.624">
-    <failure message="Element not found {By.xpath: //*[@id=&apos;rso&apos;]/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class =&apos;LC20lb MBeuO DKV0Md&apos;]/h3}&#10;Expected: visible&#10;Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398827975.0.png&#10;Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398827975.0.html&#10;Timeout: 4 s.&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;rso&apos;]/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class =&apos;LC20lb MBeuO DKV0Md&apos;]/h3&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+  <testcase name="user can search XBOX" classname="Check the HomePage #1" time="16.768">
+    <failure message="Element not found {By.xpath: //*[@id=&apos;rso&apos;]/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class =&apos;LC20lb MBeuO DKV0Md&apos;]/h3}&#10;Expected: visible&#10;Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400321083.0.png&#10;Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400321083.0.html&#10;Timeout: 4 s.&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;rso&apos;]/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class =&apos;LC20lb MBeuO DKV0Md&apos;]/h3&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
 Element not found {By.xpath: //*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3}
 Expected: visible
-Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398827975.0.png
-Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398827975.0.html
+Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400321083.0.png
+Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400321083.0.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3"}
 Caused by: org.openqa.selenium.NoSuchElementException: 
@@ -77,9 +77,9 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.3-060203-generic', java.version: '11.0.20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5f0f0e18381e55f77afef2edc429cd43, findElement {using=xpath, value=//*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /tmp/.com.google.Chrome.lpqHov}, goog:chromeOptions: {debuggerAddress: localhost:43305}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:43305/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5f0f0e18381e55f77afef2edc429cd43
+Command: [511627916744b22d72f0ca0617c85270, findElement {using=xpath, value=//*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /tmp/.com.google.Chrome.ekhmPu}, goog:chromeOptions: {debuggerAddress: localhost:46687}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46687/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 511627916744b22d72f0ca0617c85270
 </failure>
     <system-err><![CDATA[Unexpected problem occured during version sanity check
 Reported exception:
@@ -147,52 +147,52 @@ java.lang.AbstractMethodError: Receiver class org.slf4j.simple.SimpleServiceProv
 [main] WARN io.github.bonigarcia.wdm.versions.VersionDetector - Exception reading https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115 to get latest version of chromedriver (Error HTTP 404 executing https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115)
 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/victor/.cache/selenium/chromedriver/linux64/114.0.5735.90/chromedriver
 [main] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
-[main] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: /home/victor/Documentos/GitHub/QAProject/target/downloads/1693398814254_57407_1
+[main] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: /home/victor/Documentos/GitHub/QAProject/target/downloads/1693400307093_65924_1
 [main] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
-Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 14575
+Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 17313
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1693398816,380][WARNING]: This version of ChromeDriver has not been tested with Chrome version 115.
+[1693400309,196][WARNING]: This version of ChromeDriver has not been tested with Chrome version 115.
 [main] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
 [main] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
-ago. 30, 2023 2:33:37 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ago. 30, 2023 2:58:30 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 115, so returning the closest version found: 112
 [main] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=115.0.5790.170 Platform=LINUX
 [main] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.13.1
 [main] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.9.0 build revision: d7057100a6
-[main] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -> ChromeDriver: chrome on LINUX (5f0f0e18381e55f77afef2edc429cd43)
-[main] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on LINUX (5f0f0e18381e55f77afef2edc429cd43),proxy=null,downloadsFolder=/home/victor/Documentos/GitHub/QAProject/target/downloads/1693398814254_57407_1] in 1 [size=1]
+[main] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -> ChromeDriver: chrome on LINUX (511627916744b22d72f0ca0617c85270)
+[main] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on LINUX (511627916744b22d72f0ca0617c85270),proxy=null,downloadsFolder=/home/victor/Documentos/GitHub/QAProject/target/downloads/1693400307093_65924_1] in 1 [size=1]
 [main] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 1 [size=1]
 [main] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: /home/victor/Documentos/GitHub/QAProject/target/surefire-reports
 [main] INFO com.codeborne.selenide.logevents.SimpleReport - Report for user can search XBOX
 +-----------------------------------------------------------------------------------------------------------------+------------------------------+------------+------------+
 | Element                                                                                                         | Subject                      | Status     | ms.        |
 +-----------------------------------------------------------------------------------------------------------------+------------------------------+------------+------------+
-| webdriver                                                                                                       | create()                     | PASS       | 3117       |
-| open                                                                                                            | https://google.es            | PASS       | 4241       |
-| by text: Aceptar todo                                                                                           | is displayed()               | PASS       | 140        |
-| by text: Aceptar todo                                                                                           | should be(visible)           | PASS       | 54         |
-| by text: Aceptar todo                                                                                           | click()                      | PASS       | 113        |
-| by text: Aceptar todo                                                                                           | should(be hidden)            | PASS       | 38         |
-| By.name: q                                                                                                      | val(xbox)                    | PASS       | 282        |
-| By.name: q                                                                                                      | press enter()                | PASS       | 342        |
-| #res .g                                                                                                         | should have(size >= 1)       | PASS       | 2600       |
-| by text: Aceptar                                                                                                | is displayed()               | PASS       | 59         |
-| #res .g                                                                                                         | should have(text "xbox.com") | PASS       | 76         |
-| By.xpath: //*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3 | should be(visible)           | FAIL       | 4636       |
+| webdriver                                                                                                       | create()                     | PASS       | 3101       |
+| open                                                                                                            | https://google.es            | PASS       | 4133       |
+| by text: Aceptar todo                                                                                           | is displayed()               | PASS       | 112        |
+| by text: Aceptar todo                                                                                           | should be(visible)           | PASS       | 52         |
+| by text: Aceptar todo                                                                                           | click()                      | PASS       | 162        |
+| by text: Aceptar todo                                                                                           | should(be hidden)            | PASS       | 45         |
+| By.name: q                                                                                                      | val(xbox)                    | PASS       | 315        |
+| By.name: q                                                                                                      | press enter()                | PASS       | 290        |
+| #res .g                                                                                                         | should have(size >= 1)       | PASS       | 3125       |
+| by text: Aceptar                                                                                                | is displayed()               | PASS       | 58         |
+| #res .g                                                                                                         | should have(text "xbox.com") | PASS       | 90         |
+| By.xpath: //*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/a/h3|//div[@class ='LC20lb MBeuO DKV0Md']/h3 | should be(visible)           | FAIL       | 4529       |
 +-----------------------------------------------------------------------------------------------------------------+------------------------------+------------+------------+
 
 ]]></system-err>
   </testcase>
-  <testcase name="user can search XBOX" classname="Check the HomePage #2" time="34.568"/>
-  <testcase name="user can search Shopery" classname="Check the HomePage #3" time="9.814"/>
-  <testcase name="user can navigate and search results on Movistar.com" classname="Check the Movistar.com" time="15.618">
-    <failure message="Element not found {By.xpath: //*[@id=&apos;__next&apos;]/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a}&#10;Expected: visible&#10;Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398887984.1.png&#10;Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398887984.1.html&#10;Timeout: 4 s.&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;__next&apos;]/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+  <testcase name="user can search XBOX" classname="Check the HomePage #2" time="47.486"/>
+  <testcase name="user can search Shopery" classname="Check the HomePage #3" time="11.149"/>
+  <testcase name="user can navigate and search results on Movistar.com" classname="Check the Movistar.com" time="16.183">
+    <failure message="Element not found {By.xpath: //*[@id=&apos;__next&apos;]/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a}&#10;Expected: visible&#10;Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400395911.1.png&#10;Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400395911.1.html&#10;Timeout: 4 s.&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;__next&apos;]/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
 Element not found {By.xpath: //*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a}
 Expected: visible
-Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398887984.1.png
-Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398887984.1.html
+Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400395911.1.png
+Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400395911.1.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a"}
 Caused by: org.openqa.selenium.NoSuchElementException: 
@@ -202,34 +202,34 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.2.3-060203-generic', java.version: '11.0.20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5f0f0e18381e55f77afef2edc429cd43, findElement {using=xpath, value=//*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /tmp/.com.google.Chrome.lpqHov}, goog:chromeOptions: {debuggerAddress: localhost:43305}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:43305/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5f0f0e18381e55f77afef2edc429cd43
+Command: [511627916744b22d72f0ca0617c85270, findElement {using=xpath, value=//*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 115.0.5790.170, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /tmp/.com.google.Chrome.ekhmPu}, goog:chromeOptions: {debuggerAddress: localhost:46687}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46687/devtoo..., se:cdpVersion: 115.0.5790.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 511627916744b22d72f0ca0617c85270
 </failure>
     <system-err><![CDATA[[main] INFO com.codeborne.selenide.logevents.SimpleReport - Report for user can navigate and search results on Movistar.com
 +---------------------------------------------------------------------------+----------------------------------------------------+------------+------------+
 | Element                                                                   | Subject                                            | Status     | ms.        |
 +---------------------------------------------------------------------------+----------------------------------------------------+------------+------------+
-| open                                                                      | https://www.movistar.es/particulares/movistarplus/ | PASS       | 1434       |
-| By.xpath: //*[@id='onetrust-pc-btn-handler']                              | is displayed()                                     | PASS       | 18         |
-| By.xpath: //*[@id="__next"]/header/div[2]/div[1]/div[1]/a[7]/div/span     | exists()                                           | PASS       | 12         |
-| By.xpath: //*[@id='inputsupportadnsearch']                                | send keys(Hola Carlos :).)                         | PASS       | 109        |
-| By.xpath: //*[@id='inputsupportadnsearch']                                | send keys( Como estas?)                            | PASS       | 91         |
-| By.xpath: //*[@id='__next']/div/div[1]/div/div/div[2]                     | click()                                            | PASS       | 84         |
-| By.xpath: //*[@id='onetrust-pc-btn-handler']                              | is displayed()                                     | PASS       | 32         |
-| By.xpath: //*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a | should be(visible)                                 | FAIL       | 4646       |
+| open                                                                      | https://www.movistar.es/particulares/movistarplus/ | PASS       | 1921       |
+| By.xpath: //*[@id='onetrust-pc-btn-handler']                              | is displayed()                                     | PASS       | 28         |
+| By.xpath: //*[@id="__next"]/header/div[2]/div[1]/div[1]/a[7]/div/span     | exists()                                           | PASS       | 14         |
+| By.xpath: //*[@id='inputsupportadnsearch']                                | send keys(Hola Carlos :).)                         | PASS       | 126        |
+| By.xpath: //*[@id='inputsupportadnsearch']                                | send keys( Como estas?)                            | PASS       | 82         |
+| By.xpath: //*[@id='__next']/div/div[1]/div/div/div[2]                     | click()                                            | PASS       | 94         |
+| By.xpath: //*[@id='onetrust-pc-btn-handler']                              | is displayed()                                     | PASS       | 37         |
+| By.xpath: //*[@id='__next']/div/div[1]/div/div/div[1]/div/div[6]/div[1]/a | should be(visible)                                 | FAIL       | 4702       |
 +---------------------------------------------------------------------------+----------------------------------------------------+------------+------------+
 
 ]]></system-err>
   </testcase>
-  <testcase name="user can search Shopery" classname="Check the HomePage #4" time="16.862"/>
-  <testcase name="user can navigate and search results in responsive mobile mode on www.telefonica.com" classname="Check the www.telefonica.com" time="7.506">
-    <failure message="Element should be interactable {By.xpath: //*[@id=&apos;onetrust-pc-sdk&apos;]/div[3]/div[1]/div/button[1]}&#10;Element: &apos;&lt;button class=&quot;ot-pc-refuse-all-handler&quot; type=&quot;submit&quot; displayed:false&gt;&lt;/button&gt;&apos;&#10;Actual value: hidden, opacity=1&#10;Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398912487.2.png&#10;Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398912487.2.html&#10;Timeout: 4 s." type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
+  <testcase name="user can search Shopery" classname="Check the HomePage #4" time="15.173"/>
+  <testcase name="user can navigate and search results in responsive mobile mode on www.telefonica.com" classname="Check the www.telefonica.com" time="8.916">
+    <failure message="Element should be interactable {By.xpath: //*[@id=&apos;onetrust-pc-sdk&apos;]/div[3]/div[1]/div/button[1]}&#10;Element: &apos;&lt;button class=&quot;ot-pc-refuse-all-handler&quot; type=&quot;submit&quot; displayed:false&gt;&lt;/button&gt;&apos;&#10;Actual value: hidden, opacity=1&#10;Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400420198.2.png&#10;Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400420198.2.html&#10;Timeout: 4 s." type="com.codeborne.selenide.ex.ElementShould"><![CDATA[com.codeborne.selenide.ex.ElementShould: 
 Element should be interactable {By.xpath: //*[@id='onetrust-pc-sdk']/div[3]/div[1]/div/button[1]}
 Element: '<button class="ot-pc-refuse-all-handler" type="submit" displayed:false></button>'
 Actual value: hidden, opacity=1
-Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398912487.2.png
-Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693398912487.2.html
+Screenshot: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400420198.2.png
+Page source: file:/home/victor/Documentos/GitHub/QAProject/target/surefire-reports/1693400420198.2.html
 Timeout: 4 s.
 ]]></failure>
     <system-err><![CDATA[[main] ERROR io.github.bonigarcia.wdm.online.HttpClient - Error HTTP 404 executing https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115
@@ -239,11 +239,11 @@ Timeout: 4 s.
 +------------------------------------------------------------------+--------------------------------+------------+------------+
 | Element                                                          | Subject                        | Status     | ms.        |
 +------------------------------------------------------------------+--------------------------------+------------+------------+
-| open                                                             | https://www.telefonica.com/es/ | PASS       | 1351       |
-| By.xpath: //*[@id='onetrust-pc-btn-handler']                     | is displayed()                 | PASS       | 44         |
-| By.xpath: //*[@id='onetrust-pc-btn-handler']                     | should be(visible)             | PASS       | 27         |
-| By.xpath: //*[@id='onetrust-pc-btn-handler']                     | click()                        | PASS       | 77         |
-| By.xpath: //*[@id='onetrust-pc-sdk']/div[3]/div[1]/div/button[1] | click()                        | FAIL       | 4506       |
+| open                                                             | https://www.telefonica.com/es/ | PASS       | 1464       |
+| By.xpath: //*[@id='onetrust-pc-btn-handler']                     | is displayed()                 | PASS       | 32         |
+| By.xpath: //*[@id='onetrust-pc-btn-handler']                     | should be(visible)             | PASS       | 24         |
+| By.xpath: //*[@id='onetrust-pc-btn-handler']                     | click()                        | PASS       | 1388       |
+| By.xpath: //*[@id='onetrust-pc-sdk']/div[3]/div[1]/div/button[1] | click()                        | FAIL       | 4490       |
 +------------------------------------------------------------------+--------------------------------+------------+------------+
 
 ]]></system-err>

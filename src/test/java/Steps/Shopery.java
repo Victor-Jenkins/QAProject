@@ -7,8 +7,12 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+import java.util.concurrent.TimeUnit;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.codeborne.selenide.Configuration;
 
@@ -22,6 +26,19 @@ public class Shopery {
     WebDriverManager.chromedriver().setup();
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.headless = false;
+
+
+      //Coment if you execute on local, just for pipelines configuration
+    //-------------------------------------------------------------------------
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--headless");
+    ChromeDriver driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
+
+    //-------------------------------------------------------------------------
     open("https://google.es");
     sleep(500);
     if ($(byText("Aceptar todo")).isDisplayed()) {

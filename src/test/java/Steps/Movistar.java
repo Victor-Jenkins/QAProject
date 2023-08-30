@@ -3,7 +3,9 @@ package Steps;
 import static Functions.Main.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$;
+
+import java.util.concurrent.TimeUnit;
+
 import io.cucumber.junit.Cucumber;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
@@ -16,6 +18,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
  *
@@ -29,7 +32,17 @@ public class Movistar {
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.headless = false;
 
+  //Coment if you execute on local, just for pipelines configuration
+    //-------------------------------------------------------------------------
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--headless");
+    ChromeDriver driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
 
+    //-------------------------------------------------------------------------
 
 
     open("https://www.movistar.es/particulares/movistarplus/");

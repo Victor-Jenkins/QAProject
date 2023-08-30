@@ -32,13 +32,18 @@ public class HomeMenus {
     WebDriverManager.chromedriver().setup();
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.headless = false;
-    //ChromeOptions options = new ChromeOptions();
-    //options.addArguments("--no-sandbox");
-    //options.addArguments("--disable-dev-shm-usage");
-    //options.addArguments("--headless");
-    //ChromeDriver driver = new ChromeDriver(options);
-    //driver.manage().window().maximize();
-    //driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
+
+    //Coment if you execute on local, just for pipelines configuration
+    //-------------------------------------------------------------------------
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--headless");
+    ChromeDriver driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
+
+    //-------------------------------------------------------------------------
     open("https://www.xbox.com/es-ES/");
     sleep(500);
     if ($(byText("Accept")).isDisplayed()) {
