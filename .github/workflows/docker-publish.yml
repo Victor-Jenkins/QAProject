@@ -1,28 +1,28 @@
-name: Java CI with Selenium
+name: Selenium Tests
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
-    container:
-      image: selenium/standalone-chrome:latest  # Utilizar la imagen existente
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Set up JDK 17
+      - name: Set up JDK 8
         uses: actions/setup-java@v2
         with:
-          java-version: '17'
-          distribution: 'adopt'
-          cache: maven
+          java-version: 8
 
-      - name: Build and Run Tests
-        run: mvn clean install
+      - name: Build and run tests
+        run: mvn clean test
+
+      - name: Generate Allure report
+        run: mvn allure:report  # Generar el reporte Allure
+
+      - name: Upload Allure report artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: target/allure-report  # Ruta al directorio del reporte generado
