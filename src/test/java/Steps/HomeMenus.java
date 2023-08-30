@@ -5,7 +5,7 @@ import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$;
+
 import io.cucumber.junit.Cucumber;
 import org.junit.runner.RunWith;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -39,7 +39,7 @@ public class HomeMenus {
     //ChromeDriver driver = new ChromeDriver(options);
     //driver.manage().window().maximize();
     //driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
-    open("https://xbox.com");
+    open("https://www.xbox.com/es-ES/");
     sleep(500);
     if ($(byText("Accept")).isDisplayed()) {
       $(byText("Accept")).shouldBe(visible).click();
@@ -63,8 +63,13 @@ public class HomeMenus {
 
   @Then("Close popup and check Title1")
   public void theFirstOneShouldContainKeyword() {
-    String close = "//*[@id='uhfLogo']/img|//*[@id='emailSup-modal']/div/div/div[1]/button";
+    String close = "//*[@id=\"wcpConsentBannerCtrl\"]/div[2]/button[1]";
     String currentStringBoxtitle = "//*[@id='feature-uid1c62']/div/div/div/div/h1";
+    
+       if ($(byText("Accept")).isDisplayed()) {
+      $(byText("Accept")).shouldBe(visible).click();
+      $(byText("Accept")).should(disappear);
+    }
     $x(close).shouldBe(visible).click();
     sleep(1000);
     assert !currentStringBoxtitle.equals(clipboard().getText());
@@ -72,9 +77,9 @@ public class HomeMenus {
   @Then( "Check the first image1")
   public void selectResult() {
 
-    String Image = "//*[@id='highlight-uid3412']/div[1]/picture/img";
+    String Image = "//*[@id='content-card-uid3f2e']/div/div[1]/div/picture/img";
     waitToLoad(2);
-    $x(Image).shouldBe(visible).shouldBe(image);
+    $x(Image).shouldBe(visible).shouldBe(image);;
 
 
   }
@@ -82,40 +87,48 @@ public class HomeMenus {
   @Then("looking {string}")
   public void lookingOption(String write) {
     String search = "//*[@id='search']";
-    String OPTION = "//*[@id='rootContainer_Search']/div/div[4]/div/ul/li[1]/div/div/h4/a";
+    String OPTION = "//*[@id=\"uhfCatLogo\"]";
+    
     waitToLoad(2);
+   
     $x(search).shouldBe(visible).click();
 
     $(By.id("cli_shellHeaderSearchInput")).val(write).pressEnter();
+    back();
+    back();
     $x(OPTION).shouldBe(visible).click();
+ 
     waitToLoad(2);
 
   }
   @Then("navigate to games and swipe element")
   public void Games() {
-    String search = "//*[@id='c-shellmenu_58']";
-    String game = "//*[@id='c-shellmenu_57']";
-    String SWIPE1 = "//*[@id='BodyContent']/div[1]/div/div[2]/ol/li[3]/a/div[2]/div";
-    String OPTION = "//*[@id='navMenuItemDealsWeek']";
-    String OPTION2 = "//*[@id='ContentBlockList_3']/div/div/a[5]/div/div/img";
-    String SWIPE2 = "//*[@id='BodyContent']/div[1]/div/div[2]/ol/li[3]/a/div[2]/div";
-    String search1 = "//*[@id='gamepass-root']/div/div/header/div/div[1]/div/div[2]/form/div/div/input";
+if ($(byText("Español")).isDisplayed()) {
+      $(byText("Español")).shouldBe(visible).click();
+      $(byText("Español")).should(disappear);
+    }
+
+
+    String search = "//*[@id=\"ContentBlockList_3\"]/div/div/a[5]/div/div/img";
+   
+    String SWIPE1 = "//*[@id=\"BodyContent\"]/div[1]/div/div[2]/ol/li[2]";
+    
+    String SWIPE2 = "//*[@id=\"BodyContent\"]/div[1]/div/div[2]/ol/li[6]";
+    String SWIPE3 = "//*[@id=\"BodyContent\"]/div[1]/div/div[2]/ol/li[9]";
     sleep(1000);
-    $x(game).shouldBe(visible).click();
+  
     $x(search).shouldBe(visible).click();
-    $x(OPTION).shouldBe(visible).click();
-    $x(OPTION2).shouldBe(visible).click();
+    
     waitToLoad(2);
-    $x(search1).scrollTo();
-    swipeElement($x(SWIPE2), -150, 0);
+    swipeElement($x(SWIPE2), 0, 0);
     waitToLoad(2);
-    swipeElement($x(SWIPE1), -150, 0);
-    waitToLoad(2);
+
+
   }
 
   @Then("search the name {string}")
   public void Name(String name) {
-    String search = "//*[@id='gamepass-root']/div/div/header/div/div[1]/div/div[2]/form/div/div/input";
+    String search = "//*[@id=\"gamepass-root\"]/div/div/header/div/div[1]/div/div[2]/form/div/div/input";
     $x(search).shouldBe(visible).click();
     $x(search).sendKeys(name);
     $x(search).shouldBe(visible).pressEnter();

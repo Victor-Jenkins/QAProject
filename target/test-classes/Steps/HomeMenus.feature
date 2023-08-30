@@ -8,7 +8,7 @@ Feature: Check the HomePage
     Then Click on accessories1
     Then Close popup and check Title1
     Then Check the first image1
-    Then looking "xbox"
+    Then looking "fallout 76"
     Then navigate to games and swipe element
     Then search the name "fallout"
     Then search the game "Good Job"

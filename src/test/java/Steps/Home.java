@@ -45,6 +45,10 @@ public class Home {
 
   @Then("the first one should contain {string}")
   public void theFirstOneShouldContainKeyword(String expectedText) {
+    if ($(byText("Aceptar")).isDisplayed()) {
+      $(byText("Aceptar")).shouldBe(visible).click();
+      $(byText("Aceptar")).should(disappear);
+    }
     $("#res .g").shouldHave(text(expectedText));
   }
 
