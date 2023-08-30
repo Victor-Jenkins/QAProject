@@ -28,8 +28,7 @@ public class Telefónica {
       //Coment if you execute on local, just for pipelines configuration
     //-------------------------------------------------------------------------
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("--no-sandbox");
-    options.addArguments("--disable-dev-shm-usage");
+   
     
     ChromeDriver driver = new ChromeDriver(options);
     driver.manage().window().maximize();
