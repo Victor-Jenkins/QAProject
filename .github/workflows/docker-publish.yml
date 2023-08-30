@@ -10,12 +10,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install Google Chrome 114
+      - name: Install Google Chrome
         run: |
           wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
           sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable=114.0.5735.90
+          sudo apt-get install -y google-chrome-stable
+
+      - name: Download and Install ChromeDriver
+        run: |
+          CHROME_DRIVER_VERSION=114.0.5735.90
+          CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
+          curl -sS -o chromedriver.zip $CHROME_DRIVER_URL
+          unzip chromedriver.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+          rm chromedriver.zip
 
       - name: Build and run tests
         run: mvn clean test
