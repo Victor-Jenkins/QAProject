@@ -21,9 +21,15 @@ jobs:
         run: |
           CHROME_DRIVER_VERSION=116.0.5845.140
           CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
+          CHROME_DRIVER_DIR=/usr/local/bin
+
+          # Download ChromeDriver zip
           curl -sS -o chromedriver_linux64.zip $CHROME_DRIVER_URL
-          sudo mv chromedriver_linux64.zip /usr/local/bin/
-          sudo chmod +x /usr/local/bin/chromedriver
+
+          # Unzip and move to the desired directory
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver $CHROME_DRIVER_DIR/
+          sudo chmod +x $CHROME_DRIVER_DIR/chromedriver
 
       - name: Build and run tests
         run: mvn clean test
