@@ -1,41 +1,24 @@
-name: Selenium Tests
-
+name: Install ChromeDriver
 
 on: [push]
 
 jobs:
-  build:
+  install-chromedriver:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install Google Chrome
-        run: |
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
-      - name: Download and Install ChromeDriver
-        run: |
-          CHROME_DRIVER_VERSION=116.0.5845.140
-          CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
-          CHROME_DRIVER_DIR=/usr/local/bin
-
-          # Download and unzip ChromeDriver directly
-          curl -sS $CHROME_DRIVER_URL | zcat | sudo tee $CHROME_DRIVER_DIR/chromedriver > /dev/null
-          sudo chmod +x $CHROME_DRIVER_DIR/chromedriver
-
-      - name: Build and run tests
-        run: mvn clean test
-
-      - name: Generate Allure report
-        run: mvn allure:report
-
-      - name: Upload Allure report artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-report
-          path: target/allure-report
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Set up ChromeDriver
+      run: |
+        CHROME_DRIVER_VERSION=116.0.5845.140
+        CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
+        CHROME_DRIVER_DIR=/usr/local/bin
+        
+        curl -sSL $CHROME_DRIVER_URL -o chromedriver_linux64.zip
+        sudo unzip -o chromedriver_linux64.zip -d $CHROME_DRIVER_DIR
+        sudo chmod +x $CHROME_DRIVER_DIR/chromedriver
+        rm chromedriver_linux64.zip
+        
+        echo "ChromeDriver $CHROME_DRIVER_VERSION has been installed to $CHROME_DRIVER_DIR"
