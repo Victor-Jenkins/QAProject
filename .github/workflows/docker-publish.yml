@@ -17,19 +17,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      - name: Download and Install ChromeDriver
+      - name: Download and install ChromeDriver
         run: |
-          CHROME_DRIVER_VERSION=116.0.5845.140
-          CHROME_DRIVER_URL=https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
-          CHROME_DRIVER_DIR=/usr/local/bin
-
-          # Download ChromeDriver zip
+          CHROME_DRIVER_VERSION=116.0.5845.96
+          CHROME_DRIVER_URL=https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROME_DRIVER_VERSION/linux64/chromedriver-linux64.zip
           curl -sS -o chromedriver_linux64.zip $CHROME_DRIVER_URL
-
-          # Unzip and move to the desired directory
-          unzip chromedriver_linux64.zip
-          sudo mv chromedriver $CHROME_DRIVER_DIR/
-          sudo chmod +x $CHROME_DRIVER_DIR/chromedriver
+          sudo mv chromedriver_linux64.zip /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
 
       - name: Build and run tests
         run: mvn clean test
@@ -42,3 +36,4 @@ jobs:
         with:
           name: allure-report
           path: target/allure-report
+
