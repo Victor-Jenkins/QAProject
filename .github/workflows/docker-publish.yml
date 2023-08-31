@@ -20,12 +20,15 @@ jobs:
       - name: Download and install ChromeDriver
         run: |
           CHROME_DRIVER_VERSION=116.0.5845.96
-          CHROME_DRIVER_URL=https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROME_DRIVER_VERSION/linux64/chromedriver-linux64.zip
+          CHROME_DRIVER_URL=https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROME_DRIVER_VERSION/linux64/chromedriver_linux64.zip
           curl -sS -o chromedriver_linux64.zip $CHROME_DRIVER_URL
           unzip chromedriver_linux64.zip -d $HOME
           chmod +x $HOME/chromedriver
 
-
+      - name: Set up environment variables
+        run: |
+          echo "CHROME_DRIVER_PATH=$HOME/chromedriver" >> $GITHUB_ENV
+          echo "CHROME_BINARY_PATH=/usr/bin/google-chrome" >> $GITHUB_ENV
 
       - name: Build and run tests
         run: mvn clean test
