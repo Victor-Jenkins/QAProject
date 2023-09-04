@@ -6,31 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    container:
+      image: selenium/standalone-chrome
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Install Google Chrome
-        run: |
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
-      - name: Download and install ChromeDriver
-        run: |
-          CHROME_DRIVER_VERSION=$(google-chrome-stable --version | cut -d ' ' -f 3 | cut -d '.' -f 1)
-          CHROME_DRIVER_URL="https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_DRIVER_VERSION"
-          CHROME_DRIVER_VERSION=$(curl -sS $CHROME_DRIVER_URL)
-          CHROME_DRIVER_URL="https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip"
-          curl -sS -o chromedriver_linux64.zip $CHROME_DRIVER_URL
-          unzip chromedriver_linux64.zip -d $HOME
-          chmod +x $HOME/chromedriver
-
-      - name: Set up environment variables
-        run: |
-          echo "CHROME_DRIVER_PATH=$HOME/chromedriver" >> $GITHUB_ENV
-          echo "CHROME_BINARY_PATH=/usr/bin/google-chrome" >> $GITHUB_ENV
 
       - name: Build and run tests
         run: mvn clean test
