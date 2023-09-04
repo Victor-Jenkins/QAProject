@@ -19,7 +19,7 @@ jobs:
 
       - name: Download and install ChromeDriver
         run: |
-          CHROME_DRIVER_VERSION=116.0.5845.96
+          CHROME_DRIVER_VERSION=114.0.5735.90
           CHROME_DRIVER_URL=https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROME_DRIVER_VERSION/linux64/chromedriver_linux64.zip
           curl -sS -o chromedriver_linux64.zip $CHROME_DRIVER_URL
           unzip chromedriver_linux64.zip -d $HOME
