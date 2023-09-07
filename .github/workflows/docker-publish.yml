@@ -12,12 +12,6 @@ jobs:
 
 
 
-      - name: Set up Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-chromedriver
-          sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
-
       - name: Build and run tests in headless Chrome
         run: |
           mvn clean test -Dbrowser=chrome-headless
