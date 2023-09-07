@@ -10,19 +10,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build and run tests
+
+
+      - name: Set up Chrome
         run: |
-          mvn clean test
-          # Asegúrate de que los comandos de Maven estén configurados adecuadamente para tu proyecto
+          sudo apt-get update
+          sudo apt-get install -y chromium-chromedriver
+          sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
 
-      - name: Generate Allure report
+      - name: Build and run tests in headless Chrome
         run: |
-          mvn allure:report
-          # Asegúrate de que los comandos de Maven estén configurados adecuadamente para tu proyecto
-
-      - name: Upload Allure report artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-report
-          path: target/allure-report
-
+          mvn clean test -Dbrowser=chrome-headless
+          # Asegúrate de configurar tu prueba Selenium para usar "chrome-headless"
