@@ -6,25 +6,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    container:
-      image: selenium/standalone-chrome
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set Permissions
-        run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11  # Puedes ajustar la versión de Java según tus necesidades
 
       - name: Build and run tests
         run: |
           mvn clean test
-          # Asegúrate de que los comandos de Maven estén configurados adecuadamente para usar el contenedor
+          # Asegúrate de que los comandos de Maven estén configurados adecuadamente para tu proyecto
 
       - name: Generate Allure report
         run: |
           mvn allure:report
-          # Asegúrate de que los comandos de Maven estén configurados adecuadamente para usar el contenedor
+          # Asegúrate de que los comandos de Maven estén configurados adecuadamente para tu proyecto
 
       - name: Upload Allure report artifact
         uses: actions/upload-artifact@v2
