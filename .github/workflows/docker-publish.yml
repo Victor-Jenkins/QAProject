@@ -10,9 +10,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11  # Configura la versión de Java que necesites
 
-
-      - name: Build and run tests in headless Chrome
+      - name: Set up Firefox
         run: |
-          mvn clean test -Dbrowser=chrome-headless
-          # Asegúrate de configurar tu prueba Selenium para usar "chrome-headless"
+          sudo apt-get update
+          sudo apt-get install -y firefox
+
+      - name: Build and run tests in Firefox
+        run: |
+          mvn clean test -Dbrowser=firefox
+          # Asegúrate de configurar tu prueba Selenium para usar "firefox"
+
