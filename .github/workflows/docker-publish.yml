@@ -13,7 +13,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v2
         with:
-          java-version: 11  # Puedes ajustar la versión de Java según tus necesidades
+          java-version: 8  # Cambia a la versión de JDK que desees (por ejemplo, 8, 11, 15, etc.)
 
       - name: Build and run tests
         run: |
@@ -30,4 +30,5 @@ jobs:
         with:
           name: allure-report
           path: target/allure-report
+
 
